@@ -1,6 +1,6 @@
 `include "scancode_ascii_pkg.sv"
 
-module decoder_scancode_ascii_g (
+module decoder_scancode_ascii_golden (
     input  logic [7:0] scancode_in,
     output logic [7:0] ascii_out
 );

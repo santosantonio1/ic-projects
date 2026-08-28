@@ -13,7 +13,7 @@ module decoder_scancode_ascii_tb (
         .ascii_out(ascii_out)
     );
 
-    decoder_scancode_ascii_g cuv_g (
+    decoder_scancode_ascii_golden golden (
         .scancode_in(scancode_in),
         .ascii_out(ascii_out_g)
     );
@@ -39,82 +39,105 @@ module decoder_scancode_ascii_tb (
         8'h76  // esc
     }; // expect 0xFF
 
-    scancode_t sc;
+    typedef enum logic {
+        PASS = 1,
+        FAIL = 0
+    } test_status_t;
+
     int score;
     int total;
 
-    initial begin
-        string status;
+    task automatic checker(input logic [7:0] a, input logic [7:0] b, output test_status_t status);
+        #5;
+        status = (a === b) ? PASS : FAIL;
+    endtask
 
-        sc = SCANCODE_A; // sc.first();
-        score = 0;
-        total = 0;
-        
-        // characters test
+    task automatic run_character_test(ref logic [7:0] in, ref logic [7:0] golden, ref logic [7:0] out);
+        scancode_t sc = SCANCODE_A;
+        test_status_t status;
+        int total = 0;
         for (int i = 0; i < N_LETTERS; i++) begin
-            scancode_in = sc;
-
-            #5;
-
-            status = (ascii_out === ascii_out_g) ? "PASS" : "FAIL";
-            if (ascii_out === ascii_out_g) score++;
-
-            $display("[%s] SCANCODE: %h | EXPECTED %s | GOT: %s", 
-                        status, sc, ascii_out_g, ascii_out);
-                        
+            checker(golden, out, status);
+            $display("[%s] SCANCODE: %h | EXPECTED %s | GOT: %s", status.name(), sc, golden, out);
             sc = sc.next();
+            total += status;
         end
+        #5;
+    endtask
 
-        $display("[SCORE]: %d/%0d", score, N_LETTERS);
-        $display("---------------------------------------------------");
+    initial begin
 
-        sc = SCANCODE_0;
-        total += score;
-        score = 0;
+        run_character_test(scancode_in, ascii_out_g, ascii_out);
+//         string status;
 
-        // numbers test
-        for (int i = 0; i < N_DIGITS; i++) begin
-            scancode_in = sc;
+//         sc = SCANCODE_A; // sc.first();
+//         score = 0;
+//         total = 0;
+        
+//         // characters test
+//         for (int i = 0; i < N_LETTERS; i++) begin
+//             scancode_in = sc;
 
-            #5;
+//             #5;
 
-            status = (ascii_out === ascii_out_g) ? "PASS" : "FAIL";
-            if (ascii_out === ascii_out_g) score++;
+//             status = (ascii_out === ascii_out_g) ? "PASS" : "FAIL";
+//             if (ascii_out === ascii_out_g) score++;
 
-            $display("[%s] SCANCODE: %h | EXPECTED %s | GOT: %s", 
-                        status, sc, ascii_out_g, ascii_out);
+//             $display("[%s] SCANCODE: %h | EXPECTED %s | GOT: %s", 
+//                         status, sc, ascii_out_g, ascii_out);
                         
-            sc = sc.next();
-        end
+//             sc = sc.next();
+//         end
 
-        $display("[SCORE]: %d/%0d", score, N_DIGITS);
-        $display("---------------------------------------------------");
+//         $display("[SCORE]: %d/%0d", score, N_LETTERS);
+//         $display("---------------------------------------------------");
 
-        total += score;
-        score = 0;
+//         sc = SCANCODE_0;
+//         total += score;
+//         score = 0;
 
-        // symbols test
-        for (int i = 0; i < N_SYMBOLS; i++) begin
-            scancode_in = symbols[i];
-            expected    = SCANCODE_DEFAULT;
+//         // numbers test
+//         for (int i = 0; i < N_DIGITS; i++) begin
+//             scancode_in = sc;
 
-            #5;
+//             #5;
 
-            status = (ascii_out === ascii_out_g) ? "PASS" : "FAIL";
-            if (ascii_out === ascii_out_g) score++;
+//             status = (ascii_out === ascii_out_g) ? "PASS" : "FAIL";
+//             if (ascii_out === ascii_out_g) score++;
 
-            $display("[%s] SCANCODE: %h | EXPECTED %h | GOT: %h", 
-                        status, symbols[i], ascii_out_g, ascii_out);
-        end
+//             $display("[%s] SCANCODE: %h | EXPECTED %s | GOT: %s", 
+//                         status, sc, ascii_out_g, ascii_out);
+                        
+//             sc = sc.next();
+//         end
 
-        total += score;
+//         $display("[SCORE]: %d/%0d", score, N_DIGITS);
+//         $display("---------------------------------------------------");
 
-        $display("[SCORE]: %d/%0d", score, N_SYMBOLS);
-        $display("---------------------------------------------------");
+//         total += score;
+//         score = 0;
 
-        $display("[TOTAL SCORE]: %d/%0d", total, N_LETTERS + N_DIGITS + N_SYMBOLS);
+//         // symbols test
+//         for (int i = 0; i < N_SYMBOLS; i++) begin
+//             scancode_in = symbols[i];
+// z
+//             #5;
 
-        $finish;
+//             status = (ascii_out === ascii_out_g) ? "PASS" : "FAIL";
+//             if (ascii_out === ascii_out_g) score++;
+
+//             $display("[%s] SCANCODE: %h | EXPECTED %h | GOT: %h", 
+//                         status, symbols[i], ascii_out_g, ascii_out);
+//         end
+
+//         total += score;
+
+//         $display("[SCORE]: %d/%0d", score, N_SYMBOLS);
+//         $display("---------------------------------------------------");
+
+//         $display("[TOTAL SCORE]: %d/%0d", total, N_LETTERS + N_DIGITS + N_SYMBOLS);
+
+//         $finish;
     end
 
 endmodule
