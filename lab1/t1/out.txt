@@ -1,0 +1,206 @@
+Reading pref.tcl
+
+# 2025.3
+
+# do reg.do
+# QuestaSim-64 vlog 2025.3 Compiler 2025.09 Sep 15 2025
+# Start time: 20:57:29 on Aug 28,2026
+# vlog -sv scancode_ascii_pkg.sv 
+# ** Note: (vlog-220) '/soft64/mentor/ferramentas/questa/2025.3/questasim/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling package scancode_ascii_pkg_sv_unit
+# 
+# Top level modules:
+# 	--none--
+# End time: 20:57:29 on Aug 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2025.3 Compiler 2025.09 Sep 15 2025
+# Start time: 20:57:29 on Aug 28,2026
+# vlog -sv decoder_scancode_ascii.sv 
+# ** Note: (vlog-220) '/soft64/mentor/ferramentas/questa/2025.3/questasim/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling package decoder_scancode_ascii_sv_unit
+# -- Compiling module decoder_scancode_ascii_golden
+# 
+# Top level modules:
+# 	decoder_scancode_ascii_golden
+# End time: 20:57:30 on Aug 28,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 2025.3 Compiler 2025.09 Sep 15 2025
+# Start time: 20:57:30 on Aug 28,2026
+# vcom decoder_scancode_ascii_map.vhd 
+# ** Note: (vcom-220) '/soft64/mentor/ferramentas/questa/2025.3/questasim/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VCOMPONENTS
+# -- Loading package VITAL_Primitives
+# -- Loading package VPACKAGE
+# -- Compiling entity decoder_scancode_ascii
+# -- Compiling architecture Structure of decoder_scancode_ascii
+# End time: 20:57:30 on Aug 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2025.3 Compiler 2025.09 Sep 15 2025
+# Start time: 20:57:30 on Aug 28,2026
+# vlog -sv tb.sv 
+# ** Note: (vlog-220) '/soft64/mentor/ferramentas/questa/2025.3/questasim/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling package tb_sv_unit
+# -- Compiling module decoder_scancode_ascii_tb
+# 
+# Top level modules:
+# 	decoder_scancode_ascii_tb
+# End time: 20:57:30 on Aug 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Note: (vsim-220) '/soft64/mentor/ferramentas/questa/2025.3/questasim/linux_x86_64/../modelsim.ini' is used as the ini file.
+# vsim -voptargs="+acc" -onfinish stop -wlfdeleteonquit work.decoder_scancode_ascii_tb 
+# Start time: 20:57:30 on Aug 28,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-220) '/soft64/mentor/ferramentas/questa/2025.3/questasim/linux_x86_64/../modelsim.ini' is used as the ini file.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Sim-64
+# //  Version 2025.3 linux_x86_64 Sep 15 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.tb_sv_unit(fast)
+# Loading work.decoder_scancode_ascii_tb(fast)
+# Loading work.decoder_scancode_ascii_sv_unit(fast)
+# Loading work.decoder_scancode_ascii_golden(fast)
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading vital2000.vital_timing(body)
+# Loading simprim.vcomponents
+# Loading vital2000.vital_primitives(body)
+# Loading simprim.vpackage(body)
+# ** Warning: (vsim-3479) Time unit 'ps' is less than the simulator resolution (1ns).
+#    Time: 0 ns  Iteration: 0  Instance: /decoder_scancode_ascii_tb/dut
+# Loading work.decoder_scancode_ascii(structure)#1
+# Loading simprim.x_obuf(x_obuf_v)#1
+# Loading simprim.x_buf(x_buf_v)#2
+# Loading simprim.x_lut4(x_lut4_v)#1
+# Loading simprim.x_lut4(x_lut4_v)#2
+# Loading simprim.x_lut4(x_lut4_v)#3
+# Loading simprim.x_lut4(x_lut4_v)#4
+# Loading simprim.x_lut4(x_lut4_v)#5
+# Loading simprim.x_lut4(x_lut4_v)#6
+# Loading simprim.x_lut4(x_lut4_v)#7
+# Loading simprim.x_lut4(x_lut4_v)#8
+# Loading simprim.x_lut4(x_lut4_v)#9
+# Loading simprim.x_mux2(x_mux2_v)#1
+# Loading simprim.x_lut4(x_lut4_v)#10
+# Loading simprim.x_lut4(x_lut4_v)#11
+# Loading simprim.x_lut4(x_lut4_v)#12
+# Loading simprim.x_lut4(x_lut4_v)#13
+# Loading simprim.x_lut4(x_lut4_v)#14
+# Loading simprim.x_lut4(x_lut4_v)#15
+# Loading simprim.x_lut4(x_lut4_v)#16
+# Loading simprim.x_lut4(x_lut4_v)#17
+# Loading simprim.x_lut4(x_lut4_v)#18
+# Loading simprim.x_lut4(x_lut4_v)#19
+# Loading simprim.x_lut4(x_lut4_v)#20
+# Loading simprim.x_lut4(x_lut4_v)#21
+# Loading simprim.x_lut4(x_lut4_v)#22
+# Loading simprim.x_lut4(x_lut4_v)#23
+# Loading simprim.x_lut4(x_lut4_v)#24
+# Loading simprim.x_lut4(x_lut4_v)#25
+# Loading simprim.x_lut4(x_lut4_v)#26
+# Loading simprim.x_lut4(x_lut4_v)#27
+# Loading simprim.x_lut4(x_lut4_v)#28
+# Loading simprim.x_lut4(x_lut4_v)#29
+# Loading simprim.x_lut4(x_lut4_v)#30
+# Loading simprim.x_lut4(x_lut4_v)#31
+# Loading simprim.x_lut4(x_lut4_v)#32
+# Loading simprim.x_lut4(x_lut4_v)#33
+# Loading simprim.x_lut4(x_lut4_v)#34
+# Loading simprim.x_lut4(x_lut4_v)#35
+# Loading simprim.x_lut4(x_lut4_v)#36
+# Loading simprim.x_lut4(x_lut4_v)#37
+# Loading simprim.x_lut4(x_lut4_v)#38
+# Loading simprim.x_lut4(x_lut4_v)#39
+# Loading simprim.x_lut4(x_lut4_v)#40
+# Loading simprim.x_lut4(x_lut4_v)#41
+# Loading simprim.x_lut4(x_lut4_v)#42
+# Loading simprim.x_lut4(x_lut4_v)#43
+# Loading simprim.x_lut4(x_lut4_v)#44
+# Loading simprim.x_lut4(x_lut4_v)#45
+# Loading simprim.x_lut4(x_lut4_v)#46
+# Loading simprim.x_lut4(x_lut4_v)#47
+# Loading simprim.x_lut4(x_lut4_v)#48
+# Loading simprim.x_lut4(x_lut4_v)#49
+# Loading simprim.x_lut4(x_lut4_v)#50
+# Loading simprim.x_lut4(x_lut4_v)#51
+# Loading simprim.x_lut4(x_lut4_v)#52
+# Loading simprim.x_lut4(x_lut4_v)#53
+# Loading simprim.x_lut4(x_lut4_v)#54
+# Loading simprim.x_lut4(x_lut4_v)#55
+# Loading simprim.x_lut4(x_lut4_v)#56
+# Loading simprim.x_lut4(x_lut4_v)#57
+# Loading simprim.x_lut4(x_lut4_v)#58
+# Loading simprim.x_lut4(x_lut4_v)#59
+# Loading simprim.x_lut4(x_lut4_v)#60
+# Loading simprim.x_lut4(x_lut4_v)#61
+# Loading simprim.x_one(x_one_v)#1
+# Loading simprim.x_roc(x_roc_v)#1
+# Loading simprim.x_toc(x_toc_v)#1
+# [PASS] SCANCODE: 1c | EXPECTED A | GOT: A
+# [PASS] SCANCODE: 32 | EXPECTED B | GOT: B
+# [FAIL] SCANCODE: 21 | EXPECTED C | GOT: 
+# [PASS] SCANCODE: 23 | EXPECTED D | GOT: D
+# [PASS] SCANCODE: 24 | EXPECTED E | GOT: E
+# [FAIL] SCANCODE: 2b | EXPECTED F | GOT: f
+# [PASS] SCANCODE: 34 | EXPECTED G | GOT: G
+# [PASS] SCANCODE: 33 | EXPECTED H | GOT: H
+# [FAIL] SCANCODE: 43 | EXPECTED I | GOT: 
+# [PASS] SCANCODE: 3b | EXPECTED J | GOT: J
+# [PASS] SCANCODE: 42 | EXPECTED K | GOT: K
+# [PASS] SCANCODE: 4b | EXPECTED L | GOT: L
+# [PASS] SCANCODE: 3a | EXPECTED M | GOT: M
+# [FAIL] SCANCODE: 31 | EXPECTED N | GOT: ±
+# [PASS] SCANCODE: 44 | EXPECTED O | GOT: O
+# [PASS] SCANCODE: 4d | EXPECTED P | GOT: P
+# [PASS] SCANCODE: 15 | EXPECTED Q | GOT: Q
+# [PASS] SCANCODE: 2d | EXPECTED R | GOT: R
+# [PASS] SCANCODE: 1b | EXPECTED S | GOT: S
+# [PASS] SCANCODE: 2c | EXPECTED T | GOT: T
+# [PASS] SCANCODE: 3c | EXPECTED U | GOT: U
+# [PASS] SCANCODE: 2a | EXPECTED V | GOT: V
+# [PASS] SCANCODE: 1d | EXPECTED W | GOT: W
+# [PASS] SCANCODE: 22 | EXPECTED X | GOT: X
+# [PASS] SCANCODE: 35 | EXPECTED Y | GOT: Y
+# [PASS] SCANCODE: 1a | EXPECTED Z | GOT: Z
+# [SCORE]:          22/26
+# ---------------------------------------------------
+# [PASS] SCANCODE: 45 | EXPECTED 0 | GOT: 0
+# [PASS] SCANCODE: 16 | EXPECTED 1 | GOT: 1
+# [PASS] SCANCODE: 1e | EXPECTED 2 | GOT: 2
+# [PASS] SCANCODE: 26 | EXPECTED 3 | GOT: 3
+# [PASS] SCANCODE: 25 | EXPECTED 4 | GOT: 4
+# [PASS] SCANCODE: 2e | EXPECTED 5 | GOT: 5
+# [PASS] SCANCODE: 36 | EXPECTED 6 | GOT: 6
+# [FAIL] SCANCODE: 3d | EXPECTED 7 | GOT: 
+# [PASS] SCANCODE: 3e | EXPECTED 8 | GOT: 8
+# [PASS] SCANCODE: 46 | EXPECTED 9 | GOT: 9
+# [SCORE]:           9/10
+# ---------------------------------------------------
+# [TOTAL SCORE]:          31/36
+# ** Note: $finish    : tb.sv(75)
+#    Time: 180 ns  Iteration: 0  Instance: /decoder_scancode_ascii_tb
+# Break in Module decoder_scancode_ascii_tb at tb.sv line 75
+# Stopped at tb.sv line 75
+VSIM 2> # Break key hit
+# Break key hit
+# Break key hit
+# Break key hit
+> # End time: 20:57:54 on Aug 28,2026, Elapsed time: 0:00:24
+# Errors: 0, Warnings: 2
