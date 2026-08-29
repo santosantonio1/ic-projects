@@ -1,58 +1,6 @@
-Reading pref.tcl
-
-# 2025.3
-
-# do reg.do
-# QuestaSim-64 vlog 2025.3 Compiler 2025.09 Sep 15 2025
-# Start time: 20:57:29 on Aug 28,2026
-# vlog -sv scancode_ascii_pkg.sv 
-# ** Note: (vlog-220) '/soft64/mentor/ferramentas/questa/2025.3/questasim/linux_x86_64/../modelsim.ini' is used as the ini file.
-# -- Compiling package scancode_ascii_pkg_sv_unit
-# 
-# Top level modules:
-# 	--none--
-# End time: 20:57:29 on Aug 28,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vlog 2025.3 Compiler 2025.09 Sep 15 2025
-# Start time: 20:57:29 on Aug 28,2026
-# vlog -sv decoder_scancode_ascii.sv 
-# ** Note: (vlog-220) '/soft64/mentor/ferramentas/questa/2025.3/questasim/linux_x86_64/../modelsim.ini' is used as the ini file.
-# -- Compiling package decoder_scancode_ascii_sv_unit
-# -- Compiling module decoder_scancode_ascii_golden
-# 
-# Top level modules:
-# 	decoder_scancode_ascii_golden
-# End time: 20:57:30 on Aug 28,2026, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vcom 2025.3 Compiler 2025.09 Sep 15 2025
-# Start time: 20:57:30 on Aug 28,2026
-# vcom decoder_scancode_ascii_map.vhd 
-# ** Note: (vcom-220) '/soft64/mentor/ferramentas/questa/2025.3/questasim/linux_x86_64/../modelsim.ini' is used as the ini file.
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package VITAL_Timing
-# -- Loading package VCOMPONENTS
-# -- Loading package VITAL_Primitives
-# -- Loading package VPACKAGE
-# -- Compiling entity decoder_scancode_ascii
-# -- Compiling architecture Structure of decoder_scancode_ascii
-# End time: 20:57:30 on Aug 28,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vlog 2025.3 Compiler 2025.09 Sep 15 2025
-# Start time: 20:57:30 on Aug 28,2026
-# vlog -sv tb.sv 
-# ** Note: (vlog-220) '/soft64/mentor/ferramentas/questa/2025.3/questasim/linux_x86_64/../modelsim.ini' is used as the ini file.
-# -- Compiling package tb_sv_unit
-# -- Compiling module decoder_scancode_ascii_tb
-# 
-# Top level modules:
-# 	decoder_scancode_ascii_tb
-# End time: 20:57:30 on Aug 28,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
 # ** Note: (vsim-220) '/soft64/mentor/ferramentas/questa/2025.3/questasim/linux_x86_64/../modelsim.ini' is used as the ini file.
-# vsim -voptargs="+acc" -onfinish stop -wlfdeleteonquit work.decoder_scancode_ascii_tb 
-# Start time: 20:57:30 on Aug 28,2026
+# vsim -voptargs="+acc" -onfinish stop -wlfdeleteonquit work.decoder_scancode_ascii_tb -l out.txt 
+# Start time: 21:11:32 on Aug 28,2026
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # ** Note: (vopt-220) '/soft64/mentor/ferramentas/questa/2025.3/questasim/linux_x86_64/../modelsim.ini' is used as the ini file.
@@ -153,44 +101,44 @@ Reading pref.tcl
 # Loading simprim.x_one(x_one_v)#1
 # Loading simprim.x_roc(x_roc_v)#1
 # Loading simprim.x_toc(x_toc_v)#1
-# [PASS] SCANCODE: 1c | EXPECTED A | GOT: A
-# [PASS] SCANCODE: 32 | EXPECTED B | GOT: B
-# [FAIL] SCANCODE: 21 | EXPECTED C | GOT: 
-# [PASS] SCANCODE: 23 | EXPECTED D | GOT: D
-# [PASS] SCANCODE: 24 | EXPECTED E | GOT: E
-# [FAIL] SCANCODE: 2b | EXPECTED F | GOT: f
-# [PASS] SCANCODE: 34 | EXPECTED G | GOT: G
-# [PASS] SCANCODE: 33 | EXPECTED H | GOT: H
-# [FAIL] SCANCODE: 43 | EXPECTED I | GOT: Â”
-# [PASS] SCANCODE: 3b | EXPECTED J | GOT: J
-# [PASS] SCANCODE: 42 | EXPECTED K | GOT: K
-# [PASS] SCANCODE: 4b | EXPECTED L | GOT: L
-# [PASS] SCANCODE: 3a | EXPECTED M | GOT: M
-# [FAIL] SCANCODE: 31 | EXPECTED N | GOT: Â±
-# [PASS] SCANCODE: 44 | EXPECTED O | GOT: O
-# [PASS] SCANCODE: 4d | EXPECTED P | GOT: P
-# [PASS] SCANCODE: 15 | EXPECTED Q | GOT: Q
-# [PASS] SCANCODE: 2d | EXPECTED R | GOT: R
-# [PASS] SCANCODE: 1b | EXPECTED S | GOT: S
-# [PASS] SCANCODE: 2c | EXPECTED T | GOT: T
-# [PASS] SCANCODE: 3c | EXPECTED U | GOT: U
-# [PASS] SCANCODE: 2a | EXPECTED V | GOT: V
-# [PASS] SCANCODE: 1d | EXPECTED W | GOT: W
-# [PASS] SCANCODE: 22 | EXPECTED X | GOT: X
-# [PASS] SCANCODE: 35 | EXPECTED Y | GOT: Y
-# [PASS] SCANCODE: 1a | EXPECTED Z | GOT: Z
+# [PASS] SCANCODE: 1c | EXPECTED A (41) | GOT: A (41)
+# [PASS] SCANCODE: 32 | EXPECTED B (42) | GOT: B (42)
+# [FAIL] SCANCODE: 21 | EXPECTED C (43) | GOT:  (03)
+# [PASS] SCANCODE: 23 | EXPECTED D (44) | GOT: D (44)
+# [PASS] SCANCODE: 24 | EXPECTED E (45) | GOT: E (45)
+# [FAIL] SCANCODE: 2b | EXPECTED F (46) | GOT: f (66)
+# [PASS] SCANCODE: 34 | EXPECTED G (47) | GOT: G (47)
+# [PASS] SCANCODE: 33 | EXPECTED H (48) | GOT: H (48)
+# [FAIL] SCANCODE: 43 | EXPECTED I (49) | GOT: ” (94)
+# [PASS] SCANCODE: 3b | EXPECTED J (4a) | GOT: J (4a)
+# [PASS] SCANCODE: 42 | EXPECTED K (4b) | GOT: K (4b)
+# [PASS] SCANCODE: 4b | EXPECTED L (4c) | GOT: L (4c)
+# [PASS] SCANCODE: 3a | EXPECTED M (4d) | GOT: M (4d)
+# [FAIL] SCANCODE: 31 | EXPECTED N (4e) | GOT: ± (b1)
+# [PASS] SCANCODE: 44 | EXPECTED O (4f) | GOT: O (4f)
+# [PASS] SCANCODE: 4d | EXPECTED P (50) | GOT: P (50)
+# [PASS] SCANCODE: 15 | EXPECTED Q (51) | GOT: Q (51)
+# [PASS] SCANCODE: 2d | EXPECTED R (52) | GOT: R (52)
+# [PASS] SCANCODE: 1b | EXPECTED S (53) | GOT: S (53)
+# [PASS] SCANCODE: 2c | EXPECTED T (54) | GOT: T (54)
+# [PASS] SCANCODE: 3c | EXPECTED U (55) | GOT: U (55)
+# [PASS] SCANCODE: 2a | EXPECTED V (56) | GOT: V (56)
+# [PASS] SCANCODE: 1d | EXPECTED W (57) | GOT: W (57)
+# [PASS] SCANCODE: 22 | EXPECTED X (58) | GOT: X (58)
+# [PASS] SCANCODE: 35 | EXPECTED Y (59) | GOT: Y (59)
+# [PASS] SCANCODE: 1a | EXPECTED Z (5a) | GOT: Z (5a)
 # [SCORE]:          22/26
 # ---------------------------------------------------
-# [PASS] SCANCODE: 45 | EXPECTED 0 | GOT: 0
-# [PASS] SCANCODE: 16 | EXPECTED 1 | GOT: 1
-# [PASS] SCANCODE: 1e | EXPECTED 2 | GOT: 2
-# [PASS] SCANCODE: 26 | EXPECTED 3 | GOT: 3
-# [PASS] SCANCODE: 25 | EXPECTED 4 | GOT: 4
-# [PASS] SCANCODE: 2e | EXPECTED 5 | GOT: 5
-# [PASS] SCANCODE: 36 | EXPECTED 6 | GOT: 6
-# [FAIL] SCANCODE: 3d | EXPECTED 7 | GOT: 
-# [PASS] SCANCODE: 3e | EXPECTED 8 | GOT: 8
-# [PASS] SCANCODE: 46 | EXPECTED 9 | GOT: 9
+# [PASS] SCANCODE: 45 | EXPECTED 0 (30) | GOT: 0 (30)
+# [PASS] SCANCODE: 16 | EXPECTED 1 (31) | GOT: 1 (31)
+# [PASS] SCANCODE: 1e | EXPECTED 2 (32) | GOT: 2 (32)
+# [PASS] SCANCODE: 26 | EXPECTED 3 (33) | GOT: 3 (33)
+# [PASS] SCANCODE: 25 | EXPECTED 4 (34) | GOT: 4 (34)
+# [PASS] SCANCODE: 2e | EXPECTED 5 (35) | GOT: 5 (35)
+# [PASS] SCANCODE: 36 | EXPECTED 6 (36) | GOT: 6 (36)
+# [FAIL] SCANCODE: 3d | EXPECTED 7 (37) | GOT:  (07)
+# [PASS] SCANCODE: 3e | EXPECTED 8 (38) | GOT: 8 (38)
+# [PASS] SCANCODE: 46 | EXPECTED 9 (39) | GOT: 9 (39)
 # [SCORE]:           9/10
 # ---------------------------------------------------
 # [TOTAL SCORE]:          31/36
@@ -198,9 +146,5 @@ Reading pref.tcl
 #    Time: 180 ns  Iteration: 0  Instance: /decoder_scancode_ascii_tb
 # Break in Module decoder_scancode_ascii_tb at tb.sv line 75
 # Stopped at tb.sv line 75
-VSIM 2> # Break key hit
-# Break key hit
-# Break key hit
-# Break key hit
-> # End time: 20:57:54 on Aug 28,2026, Elapsed time: 0:00:24
+# End time: 21:11:45 on Aug 28,2026, Elapsed time: 0:00:13
 # Errors: 0, Warnings: 2

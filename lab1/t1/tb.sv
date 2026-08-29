@@ -39,7 +39,7 @@ module decoder_scancode_ascii_tb (
             if (ascii_out === ascii_out_golden) score++;
 
             $display("[%s] SCANCODE: %h | EXPECTED %s (%h) | GOT: %s (%h)", 
-                        status, sc, ascii_out_golden, ascii_out);
+                        status, sc, ascii_out_golden, ascii_out_golden, ascii_out, ascii_out);
                         
             sc = sc.next();
         end
@@ -61,7 +61,7 @@ module decoder_scancode_ascii_tb (
             if (ascii_out === ascii_out_golden) score++;
 
             $display("[%s] SCANCODE: %h | EXPECTED %s (%h) | GOT: %s (%h)", 
-                        status, sc, ascii_out_golden, ascii_out);
+                        status, sc, ascii_out_golden, ascii_out_golden, ascii_out, ascii_out);
                         
             sc = sc.next();
         end
