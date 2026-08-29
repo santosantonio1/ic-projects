@@ -11,7 +11,7 @@ vlog -sv decoder_scancode_ascii.sv
 vcom  decoder_scancode_ascii_map.vhd
 vlog -sv tb.sv
 
-vsim -voptargs=+acc -onfinish stop -wlfdeleteonquit work.decoder_scancode_ascii_tb
+vsim -voptargs=+acc -onfinish stop -wlfdeleteonquit work.decoder_scancode_ascii_tb -l out.txt
 
 add wave sim:/*
 
