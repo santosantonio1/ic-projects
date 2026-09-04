@@ -1,0 +1,47 @@
+\documentclass[a4paper,11pt]{article}
+% \documentclass[12pt,brazil,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+\usepackage[margin=2.5cm]{geometry}
+
+\begin{document}
+
+\begin{center}
+    {\large\bfseries Relatório de Verificação --- decoder\_scancode\_ascii}\\[4pt]
+    Lucas Damo \quad$\cdot$\quad Antônio dos Santos\\[4pt]
+    CUV: \texttt{decoder\_scancode\_ascii\_map.vhd} \quad vs \quad Golden: \texttt{decoder\_scancode\_ascii.sv}
+\end{center}
+
+\noindent
+
+Aplicamos 52 testes: todos os caracteres (26), todos os dígitos (10) e 16 símbolos. Obtivemos 6 divergências, listadas abaixo:
+
+\vspace{8pt}
+
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Entrada}  & \textbf{Resultado Obtido} & \textbf{Resultado Esperado} \\
+    \hline
+    21                & 03                        & 43  \\ 
+    \hline
+    2B                & 66                        & 46  \\ 
+    \hline
+    43                & 94                        & 49  \\ 
+    \hline
+    31                & B1                        & 4E  \\ 
+    \hline
+    3D                & 07                        & 37  \\ 
+    \hline
+    49                & 05                        & FF  \\ 
+    \hline
+    \end{tabular}
+\end{center}
+
+Pontuação final: 46/52.
+
+\vspace{4pt}
+\noindent
+
+\end{document}

@@ -1,5 +1,7 @@
-`ifndef scancode_ascii_pkg
-`define scancode_ascii_pkg
+`ifndef SCANCODE_ASCII_PKG
+`define SCANCODE_ASCII_PKG
+
+package scancode_ascii_pkg;
 
     typedef enum logic [7:0] {
         SCANCODE_A          = 8'h1C,
@@ -38,13 +40,28 @@
         SCANCODE_6          = 8'h36,
         SCANCODE_7          = 8'h3D,
         SCANCODE_8          = 8'h3E,
-        SCANCODE_9          = 8'h46,
-        SCANCODE_DEFAULT    = 8'hFF
+        SCANCODE_9          = 8'h46
     } scancode_t;
 
     typedef enum logic {
         PASS = 1,
         FAIL = 0
     } test_status_t;
+
+    class scancode_test;
+        logic [7:0] in;
+        logic [7:0] out;
+        logic [7:0] expected;
+
+        function test_status_t check();
+            return (expected === out) ? PASS : FAIL;
+        endfunction
+
+        function void print();
+            $display("[%s] SCANCODE: %h | GOT: %h | EXPECTED %h",
+                        check().name(), in, out, expected);
+        endfunction
+    endclass
+endpackage
 
 `endif

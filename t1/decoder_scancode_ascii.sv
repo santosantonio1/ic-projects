@@ -1,6 +1,8 @@
 `include "scancode_ascii_pkg.sv"
 
-module decoder_scancode_ascii_golden (
+module decoder_scancode_ascii_golden 
+    import scancode_ascii_pkg::*;
+(
     input  logic [7:0] scancode_in,
     output logic [7:0] ascii_out
 );
@@ -45,7 +47,7 @@ module decoder_scancode_ascii_golden (
             SCANCODE_8: ascii_out = "8";
             SCANCODE_9: ascii_out = "9";
 
-            default:    ascii_out = SCANCODE_DEFAULT; 
+            default:    ascii_out = 8'hFF; 
         endcase
     end
 
